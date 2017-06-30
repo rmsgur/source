@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+<h3>UpLoad</h3>
+{% include 'messages.html' %}
+<div>
+    <form method="post" action="{% url 'create' %}">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons submit='提交' %}{% endbuttons %}
+    </form>
+</div>
+{% endblock %}
